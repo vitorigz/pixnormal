@@ -42,7 +42,6 @@
             color: #777;
         }
 
-        /* Estilo para o campo e botão */
         .copy-container {
             display: flex;
             justify-content: center;
@@ -71,7 +70,6 @@
             background-color: #218838;
         }
 
-        /* Estilo para a mensagem de envio do comprovante */
         .instructions {
             margin-top: 20px;
             font-size: 16px;
@@ -97,10 +95,9 @@
     <h2>Chave PIX</h2>
     <p><strong>Valor:</strong> R$ 20,00</p>
 
-    <!-- Campo com a chave PIX e botão para copiar -->
     <div class="copy-container">
-        <input type="text" value="75ebe15c-a77b-4b03-94ab-3b67c76b0406" id="pix-key" readonly>
-        <button id="copy-btn" onclick="copyPixKey()">Copiar Chave</button>
+        <input type="text" value="00020126930014BR.GOV.BCB.PIX013675ebe15c-a77b-4b03-94ab-3b67c76b04060231Encaminhe o comprovante pela dm520400005303986540520.005802BR5924Vitoria Gabriely Lacerda6009SAO PAULO621405107l3C9Bu9v96304DFE0" id="pix-key" readonly>
+        <button id="copy-btn" onclick="copyPixKey()">Copiar código do QR Code</button>
     </div>
 
     <div class="qr-code">
@@ -108,7 +105,6 @@
         <p>Escaneie o QR Code acima para pagar R$ 20,00</p>
     </div>
 
-    <!-- Instruções para enviar o comprovante -->
     <div class="instructions">
         <p>Após realizar o pagamento, envie o comprovante junto com seu nome completo pela DM da nossa página no Instagram:</p>
         <p><a href="https://www.instagram.com/2k24_halloween" target="_blank">@2k24_halloween</a></p>
@@ -117,17 +113,15 @@
 
 <script>
     function copyPixKey() {
-        // Seleciona o campo de texto contendo a chave PIX
+
         var pixKeyField = document.getElementById("pix-key");
 
-        // Seleciona o conteúdo do campo
-        pixKeyField.select();
-        pixKeyField.setSelectionRange(0, 99999); // Para dispositivos móveis
 
-        // Copia o conteúdo para a área de transferência
+        pixKeyField.select();
+        pixKeyField.setSelectionRange(0, 99999); 
+
         document.execCommand("copy");
 
-        // Alerta ou mensagem ao usuário
         alert("Chave PIX copiada: " + pixKeyField.value);
     }
 </script>
